@@ -27,8 +27,8 @@ def build_vocab(data, min_token_instances, verbose=True):
   vocab = set()
   for token, count in token_counter.iteritems():
     if count >= min_token_instances:
-      vocab.add(token)    
-  
+      vocab.add(token)
+
   if verbose:
     print ('Keeping %d / %d tokens with enough instances'
               % (len(vocab), len(token_counter)))
@@ -65,7 +65,7 @@ def encode_caption(tokens, token_to_idx, max_token_length):
       encoded[i] = token_to_idx[token]
     else:
       encoded[i] = token_to_idx['<UNK>']
-return encoded
+  return encoded
 
 def encode_captions(data, token_to_idx, max_token_length):
   encoded_list = []
